@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>My Cart</title>
+
+    <script src="index.js"></script>
+
+</head>
+
+<body>
+
+    <h1>My Cart</h1>
+
+
+    <main>
+
+        <div class="products">
+
+        </div>
+
+
+        <div class="payment">
+            <div class="cart">
+                <ul>
+                    
+                </ul>
+            </div>
+
+            <div class="buySection">
+
+            </div>
+
+
+            <!-- <button onclick="removeFromCart">X</button> -->
+
+        </div>
+
+    </main>
+
+    <script>
+
+
+        function addToCart (name) {
+            
+        }
+
+
+        function removeFromCart () {
+
+        }
+
+
+
+        function infoPrinter (elem) {
+
+            for (let i = 0; i < elem.length; i++) {
+
+                const node = document.createElement("div")
+                const name = document.createElement("h4")
+                const price = document.createElement("h5")
+                const pic = document.createElement("img")
+                const add = document.createElement("button")
+
+                document.querySelector(".products").appendChild(node)
+
+                node.classList.add("product")
+
+                node.appendChild(name)
+                node.appendChild(pic)
+                node.appendChild(price)
+                node.appendChild(add)
+
+                let att = document.createAttribute("onclick")
+                att.value = `addToCart(${elem[i].productName})`
+                add.setAttributeNode(att)
+                add.innerHTML = "Add to Cart"
+
+                let att2 = document.createAttribute("src")
+                att2.value = elem[i].img_src
+                pic.setAttributeNode(att2)
+
+                let att3 = document.createAttribute("alt")
+                att3.value = elem[i].productName
+                pic.setAttributeNode(att3)
+
+                document.querySelector(`.product:nth-of-type(${i + 1})>h4`).innerHTML = elem[i].productName
+                document.querySelector(`.product:nth-of-type(${i + 1})>h5`).innerHTML = `${elem[i].unitPrice} TL`
+            }
+        }
+
+        infoPrinter(products)
+
+
+    </script>
+
+    
+</body>
+
+</html>
