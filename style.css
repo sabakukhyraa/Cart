@@ -1,0 +1,54 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    box-sizing: border-box;
+} 
+
+
+main {
+    border: .2px solid rgba(128, 128, 128, 0.192);
+    margin: 0 200px 0 200px;
+}
+
+
+.products {
+    display: inline-grid;
+    padding: 15px;
+    place-content: center;
+    gap: 1.5rem;
+    grid-template-columns: 
+        repeat(4, 12.5rem);
+    border: 1px solid rgba(0, 0, 0, 0.192);
+    border-radius: 5px;
+    background-color: rgb(175, 203, 226);
+}
+
+
+.product {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    border: .5px solid rgba(128, 128, 128, 0.349);
+    border-radius: 5px;
+}
+
+
+img{
+    background-color: white;
+    width: 100px;
+    height: 100px;
+}
+
+
+h4 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 12px;
+}
+
+
+h5 {
+    margin: 3px;
+}

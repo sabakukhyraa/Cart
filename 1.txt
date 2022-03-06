@@ -1,0 +1,62 @@
+            <!-- <div class="product">
+                <h4 class="product-name">Iphone 13</h4>
+                <img src="../Cart/assets/1.jpg" alt="iphone13">
+                <h5>8990 TL</h5>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div>
+
+
+            <div class="product">
+                <h4 class="product-name"></h4>
+                <img src="../Cart/assets/primera-44-classical-guitar-prodipe-guitars-jmfprimera44.jpg" alt="guitar">
+                <br>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div>
+
+
+            <div class="product">
+                <h4 class="product-name"></h4>
+                <img src="../Cart/assets/04dd96e82f60e4788243e68317924862--heinz-baked-beans-can-safe.jpg" alt="beans">
+                <br>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div>
+
+
+            <div class="product">
+                <h4 class="product-name"></h4>
+                <img src="../Cart/assets/fff4112f-12a8-47b3-8e1b-721467ab46f2_size1400x1400_quality100_cropCenter.jpg" alt="shoe">
+                <br>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div>
+
+
+            <div class="product">
+                <h4 class="product-name"></h4>
+                <img src="../Cart/assets/g733-black-gallery-1.png" alt="headphone">
+                <br>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div>
+
+
+            <div class="product">
+                <h4 class="product-name"></h4>
+                <img src="../Cart/assets/indir.jpg" alt="pens">
+                <br>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div>
+
+
+            <div class="product">
+                <h4 class="product-name"></h4>
+                <img src="../Cart/assets/5421f94e3774e6c34297303f47a03223.jpg" alt="comic book">
+                <br>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div>
+
+
+            <div class="product">
+                <h4 class="product-name"></h4>
+                <img src="../Cart/assets/wireless-selfie-stick-with-tripod.jpg" alt="selfie stick">
+                <br>
+                <button onclick="addToCart()">Add to Cart</button>
+            </div> -->
