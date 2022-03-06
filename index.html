@@ -11,13 +11,17 @@
 
     <title>My Cart</title>
 
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&family=Roboto:wght@300&display=swap');
+    </style>
+
     <script src="index.js"></script>
 
 </head>
 
 <body>
 
-    <h1>My Cart</h1>
+    <h1>Products</h1>
 
 
     <main>
@@ -28,29 +32,73 @@
 
 
         <div class="payment">
+
             <div class="cart">
-                <ul>
-                    
-                </ul>
+                <h2>Cart</h2>
+                <table class="product-cart-table">
+                    <thead>
+                        <tr>
+                            <th>Items</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                        </tr>    
+                    </thead>
+                    <tr>
+                        <td>Converse</td>
+                        <td>1</td>
+                        <td>200 TL</td>
+                    </tr>
+                    <tr>
+                        <td>Logitech - Headphone</td>
+                        <td>1</td>
+                        <td>1350 TL</td>
+                    </tr>
+                    <tr>
+                        <td>Logitech - Headphone</td>
+                        <td>1</td>
+                        <td>1350 TL</td>
+                    </tr>
+                    <tr>
+                        <td>Logitech - Headphone</td>
+                        <td>1</td>
+                        <td>1350 TL</td>
+                    </tr>
+                    <tr>
+                        <td>Logitech - Headphone</td>
+                        <td>1</td>
+                        <td>1350 TL</td>
+                    </tr>
+                </table>
             </div>
 
-            <div class="buySection">
 
+
+
+            <div class="paymentSection">
+                <h2>Payment</h2>
+                <button class="button" onclick="checkout()">Proceed to checkout</button>
             </div>
-
-
-            <!-- <button onclick="removeFromCart">X</button> -->
 
         </div>
 
     </main>
 
+    <br><hr><br>
+
+    <footer>
+
+        <a href="https://www.linkedin.com/in/ali-kerem-ata-11149521a/">LinkedIn</a>
+        <a href="https://github.com/sabakukhyraa">Github</a>
+
+    </footer>
+
     <script>
 
 
         function addToCart (name) {
-            
+            // const col = document.createElement("li")
         }
+
 
 
         function removeFromCart () {
@@ -73,15 +121,17 @@
 
                 node.classList.add("product")
 
-                node.appendChild(name)
                 node.appendChild(pic)
+                node.appendChild(name)
+                
                 node.appendChild(price)
                 node.appendChild(add)
 
                 let att = document.createAttribute("onclick")
-                att.value = `addToCart(${elem[i].productName})`
+                att.value = `addToCart(${elem[i].id})`
                 add.setAttributeNode(att)
                 add.innerHTML = "Add to Cart"
+                add.classList.add("button")
 
                 let att2 = document.createAttribute("src")
                 att2.value = elem[i].img_src
@@ -96,6 +146,15 @@
             }
         }
 
+
+
+        function checkout() {
+
+        }
+
+
+
+        
         infoPrinter(products)
 
 
