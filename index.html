@@ -58,8 +58,7 @@
 
                 <h2>Payment</h2>
 
-
-                <button class="button" onclick="checkout()">Proceed to checkout</button>
+                <br><hr>
 
             </div>
 
@@ -116,6 +115,8 @@
                 price.innerHTML = item[0].unitPrice
                 removeBtn.innerHTML = "X"
             }
+
+            priceCalculator()
         }
 
 
@@ -140,6 +141,8 @@
                 quantityOfIds.splice(indexOfItem, 1)
                 document.getElementById(`${Id}`).innerHTML = quantityFinder(Id).length
             }
+
+            priceCalculator()
         }
 
 
@@ -184,11 +187,37 @@
         }
 
 
+        function priceCalculator() {
+        
+            paymentLoc.appendChild(totalPrice)
+
+            let total = cart.reduce((acc, product) => acc + product.unitPrice, 0)
+
+            totalPrice.classList.add("price")
+            totalPrice.innerHTML = `TRY ${total.toFixed(2)}`
+
+            paymentLoc.appendChild(endButton)
+            endButton.classList.add("button")
+            endButton.getAttribute("onclick", "checkout()")
+            endButton.innerHTML = "Proceed to checkout"
+
+        }
+
 
         function checkout() {
 
         }
 
+        let paymentLoc = document.querySelector(".paymentSection")
+
+        let totalPrice = document.createElement("span")
+        
+        let endButton = document.createElement("button")
+
+
+        
+
+        // <button class="button" onclick="checkout()">Proceed to checkout</button>
 
         infoPrinter(products)
 

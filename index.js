@@ -7,5 +7,6 @@ const products = [
     {id: 5, productName: "Logitech - Headphone", unitPrice: 1350.0, img_src: "../Cart/assets/5.png"},
     {id: 6, productName: "Mr.Pen - Tip Pen", unitPrice: 25.55, img_src: "../Cart/assets/6.jpg"},
     {id: 7, productName: "Marvel's Avengers Comic Book", unitPrice: 51.90, img_src: "../Cart/assets/7.png"},
-    {id: 8, productName: "Selfie Stick", unitPrice: 37.75, img_src: "../Cart/assets/8.jpg"}
+    {id: 8, productName: "Selfie Stick", unitPrice: 37.75, img_src: "../Cart/assets/8.jpg"},
+    {id: 9, productName: "annen", unitPrice: 0.35, img_src: ""}
 ]

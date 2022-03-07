@@ -11,7 +11,7 @@ html, body {
 main {
     border: .2px solid rgba(128, 128, 128, 0.192);
     margin: 0 200px 0 200px;
-    min-width: 800px;
+    min-width: 905px;
 }
 
 
@@ -97,25 +97,27 @@ img{
     width: 110px;
     height: 20px;
     font-family: 'Lucida Sans', sans-serif;
-    font-weight: 600;
-    color: white;
-    border: 2px solid yellow;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
     background: orange;
     cursor: pointer;
     overflow: hidden;
     border-radius: 10px;
+    border: transparent;
 }
 
 
 .button:hover {
-    color: black;
+    color: white;
     /* box-shadow: inset 0px 0px 50px -20px rgba(0,0,0,0.16); */
-    border: 2px solid red;
+    border: 2px solid yellow;
 }
 
 
 .payment {
-    margin: 0;
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+    place-content: center;
 }
 
 
@@ -123,12 +125,26 @@ img{
 .cart, .paymentSection {
     display: inline-block;
     width: 46%;
+    height: auto;
     border: .5px solid rgb(140, 201, 252);
     border-radius: 5px;
     text-align: center; 
     background-color: rgba(167, 214, 252, 0.582);
     margin-top: 50px;
     min-width: 400px;
+}
+
+
+
+.cart {
+    margin-left: auto;
+}
+
+
+
+.paymentSection {
+    height: auto;
+    left: 0;
 }
 
 
@@ -174,7 +190,10 @@ img{
 
 
 .paymentSection button {
-    width: auto;
+    display: block;
+    width: 70%;
+    height: 35px;
+    margin: auto;
 }
 
 
@@ -183,5 +202,13 @@ img{
     width: auto;
     text-align: center;
     margin-top: 70%;
-    margin-bottom: 70%;   
+    margin-bottom: 10px;   
+}
+
+
+.price {
+    display: inline-block;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 15px;
 }
