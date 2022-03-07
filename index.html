@@ -35,48 +35,32 @@
 
             <div class="cart">
                 <h2>Cart</h2>
+
                 <table class="product-cart-table">
+
                     <thead>
                         <tr>
                             <th>Items</th>
                             <th>Quantity</th>
                             <th>Price</th>
+                            <th></th>
                         </tr>    
                     </thead>
-                    <tr>
-                        <td>Converse</td>
-                        <td>1</td>
-                        <td>200 TL</td>
-                    </tr>
-                    <tr>
-                        <td>Logitech - Headphone</td>
-                        <td>1</td>
-                        <td>1350 TL</td>
-                    </tr>
-                    <tr>
-                        <td>Logitech - Headphone</td>
-                        <td>1</td>
-                        <td>1350 TL</td>
-                    </tr>
-                    <tr>
-                        <td>Logitech - Headphone</td>
-                        <td>1</td>
-                        <td>1350 TL</td>
-                    </tr>
-                    <tr>
-                        <td>Logitech - Headphone</td>
-                        <td>1</td>
-                        <td>1350 TL</td>
-                    </tr>
+                    
                 </table>
+
             </div>
 
 
 
 
             <div class="paymentSection">
+
                 <h2>Payment</h2>
+
+
                 <button class="button" onclick="checkout()">Proceed to checkout</button>
+
             </div>
 
         </div>
@@ -94,15 +78,68 @@
 
     <script>
 
+        const cart = []
+        const quantityOfIds = []
+        const quantityFinder = (theId) => quantityOfIds.filter(unit => (unit == theId))
 
-        function addToCart (name) {
-            // const col = document.createElement("li")
+        function addToCart (itemId) {
+
+            let item = products.filter(obj => (obj.id == itemId))
+
+            cart.push(item[0])
+            quantityOfIds.push(itemId)
+
+            const tableLoc = document.querySelector(".product-cart-table")
+            const itemLine = document.createElement("tr")
+            itemLine.classList.add(`${itemId}`)
+            const itemName = document.createElement("td")
+            const quantity = document.createElement("td")
+            quantity.setAttribute("id", `${itemId}`)
+            const price =  document.createElement("td")
+            const removeBtn = document.createElement("button")
+            removeBtn.classList.add("button")
+            removeBtn.setAttribute("onclick", `removeFromCart(${itemId})`)
+
+
+            if ((quantityFinder(itemId).length) != 1) {
+                document.getElementById(`${itemId}`).innerHTML = quantityFinder(itemId).length
+            }
+
+            else {
+                tableLoc.appendChild(itemLine)
+                itemLine.appendChild(itemName)
+                itemLine.appendChild(quantity)
+                itemLine.appendChild(price)
+                itemLine.appendChild(removeBtn)
+                itemName.innerHTML = item[0].productName
+                quantity.innerHTML = quantityFinder(itemId).length
+                price.innerHTML = item[0].unitPrice
+                removeBtn.innerHTML = "X"
+            }
         }
 
 
 
-        function removeFromCart () {
+        function removeFromCart (Id) {  
+            
+            let indexOfItem = quantityOfIds.indexOf(Id)
+            
 
+
+            if ((quantityFinder(Id).length) == 1) {
+                const elem = document.getElementById(`${Id}`).parentElement
+                elem.remove()
+                cart.splice(indexOfItem, 1)
+                quantityOfIds.splice(indexOfItem, 1)
+                console.log("ananke")
+            }
+
+
+            if ((quantityFinder(Id).length) > 1) {
+                cart.splice(indexOfItem, 1)
+                quantityOfIds.splice(indexOfItem, 1)
+                document.getElementById(`${Id}`).innerHTML = quantityFinder(Id).length
+            }
         }
 
 
@@ -153,10 +190,7 @@
         }
 
 
-
-        
         infoPrinter(products)
-
 
     </script>
 
