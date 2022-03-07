@@ -76,7 +76,7 @@ function infoPrinter (elem) {
 function addToCart (itemId) {
     //This function gets a parameter which is the id of the product.
 
-    //Selecting the correct product with the help of "Id" key and filter method. example for Id key = {-->id: 3<--, productName: "Heinz - Conserve Beans"...) 
+    //Selecting the correct product with the help of "Id" key and filter method. example for Id key = (-->id: 3<--, productName: "Heinz - Conserve Beans"...) 
     let item = products.filter(obj => (obj.id == itemId))
 
     cart.push(item[0])
