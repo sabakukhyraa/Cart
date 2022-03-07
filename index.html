@@ -7,19 +7,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- CSS Link -->
     <link rel="stylesheet" href="style.css">
+
 
     <title>My Cart</title>
 
+
+    <!-- Roboto font -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&family=Roboto:wght@300&display=swap');
     </style>
 
-    <script src="index.js"></script>
+    <!-- Functions and the data of products which is not real. -->
+    <script src="index.js"></script> 
+
 
 </head>
 
 <body>
+
 
     <h1>Products</h1>
 
@@ -27,11 +34,13 @@
     <main>
 
         <div class="products">
-
+            <!-- This section is filled with an array which has the name "products" and the infoPrinter function-->
         </div>
 
 
-        <div class="payment">
+
+        <div class="payment"> <!-- The area which has the products in the cart and the total price. -->
+
 
             <div class="cart">
                 <h2>Cart</h2>
@@ -43,30 +52,34 @@
                             <th>Items</th>
                             <th>Quantity</th>
                             <th>Price</th>
-                            <th></th>
+                            <th></th><!-- This column exists for the remove button. -->
                         </tr>    
                     </thead>
                     
+                    <!-- The other item lines are going to come from the addToCart function. -->
+
                 </table>
 
             </div>
 
 
 
-
             <div class="paymentSection">
 
                 <h2>Payment</h2>
-
+                <!-- This part will be filled with the total price. -->
                 <br><hr>
 
             </div>
+
 
         </div>
 
     </main>
 
+
     <br><hr><br>
+
 
     <footer>
 
@@ -75,31 +88,28 @@
 
     </footer>
 
+
+
+
     <script>
 
+        // Products which is in the cart. 
         const cart = []
         const quantityOfIds = []
 
-        function checkout() {
 
+        function checkout() {
+            //Skiping to the payment screen which isn't exist. 
         }
 
-        let paymentLoc = document.querySelector(".paymentSection")
 
-        let totalPrice = document.createElement("span")
-        
-        let endButton = document.createElement("button")
+        infoPrinter(products) //This function shows to the user all the information of products which in the "products" array.
 
-
-        
-
-        // <button class="button" onclick="checkout()">Proceed to checkout</button>
-
-        infoPrinter(products)
 
     </script>
 
-    
+
+
 </body>
 
 </html>

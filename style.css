@@ -124,7 +124,7 @@ img{
 
 .cart, .paymentSection {
     display: inline-block;
-    width: 46%;
+    width: 48%;
     height: auto;
     border: .5px solid rgb(140, 201, 252);
     border-radius: 5px;
@@ -152,7 +152,7 @@ img{
 .product-cart-table {
     border-collapse: collapse;
     margin: 25px auto;
-    font-size: 1.4rem;
+    font-size: 1rem;
     /* min-width: 450px; */
     text-align: left;
     border-radius: 10px 10px 0 0;
@@ -163,6 +163,7 @@ img{
 
 
 .product-cart-table thead tr {
+    font-size: 1.3rem;
     background-color: rgba(25, 67, 206, 0.644);
     font-weight: bold;
     color: white;
