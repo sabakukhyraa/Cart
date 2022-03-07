@@ -1,5 +1,5 @@
 # Cart
 
-This project is a practice of an e-commercial website's cart.
+This project is a practice of an ecommerce websites cart.
 
 Ali Kerem Ata
