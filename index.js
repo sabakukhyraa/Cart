@@ -167,8 +167,3 @@ function priceCalculator() {
     endButton.getAttribute("onclick", "checkout()") //Adding the function "checkout" which is empty to the button.
     endButton.innerHTML = "Proceed to checkout"
 }
-
-// Creating the tags of payment section.
-let paymentLoc = document.querySelector(".paymentSection")
-let totalPrice = document.createElement("span")
-let endButton = document.createElement("button")
