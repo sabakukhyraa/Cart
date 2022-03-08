@@ -20,7 +20,7 @@ function infoPrinter (elem) {
     //This function shows to the user all the information of products with the arrays name parameter.
 
 
-    //FOR LOOP - for reaching all the products in the "products" array.
+    //FOR LOOP - to reaching all the products in the "products" array.
     for (let i = 0; i < elem.length; i++) {
 
         // Creating a product section as a div with an image, name, price and "addToCart" button as child.
@@ -79,26 +79,29 @@ function addToCart (itemId) {
     //Selecting the correct product with the help of "Id" key and filter method. example for Id key = {-->id: 3<--, productName: "Heinz - Conserve Beans"...) 
     let item = products.filter(obj => (obj.id == itemId))
 
+    // Adding the object and product ID to the arrays.
     cart.push(item[0])
     quantityOfIds.push(itemId)
 
+
+    // Creating the table of cart.
     const tableLoc = document.querySelector(".product-cart-table")
-    const itemLine = document.createElement("tr")
-    itemLine.classList.add(`${itemId}`)
+    const itemLine = document.createElement("tr") // New Line for the item.
+    itemLine.classList.add(`${itemId}`) // Giving the class as its id to reaching it easier.
     const itemName = document.createElement("td")
     const quantity = document.createElement("td")
-    quantity.setAttribute("id", `${itemId}`)
+    quantity.setAttribute("id", `${itemId}`) // Giving the id attribute as its "product.id" to reaching it easier.
     const price =  document.createElement("td")
-    const removeBtn = document.createElement("button")
-    removeBtn.classList.add("button")
-    removeBtn.setAttribute("onclick", `removeFromCart(${itemId})`)
+    const removeBtn = document.createElement("button") // A button to remove the item from the cart.
+    removeBtn.classList.add("button") // for style.
+    removeBtn.setAttribute("onclick", `removeFromCart(${itemId})`) // for function.
 
 
-    if ((quantityFinder(itemId).length) != 1) {
+    if ((quantityFinder(itemId).length) != 1) { //If the item is already in the cart don't add a new line to the table, increase the quantity instead. 
         document.getElementById(`${itemId}`).innerHTML = quantityFinder(itemId).length
     }
 
-    else {
+    else { //If the item is not in the cart, add it to the cart and create a new line on the table.
         tableLoc.appendChild(itemLine)
         itemLine.appendChild(itemName)
         itemLine.appendChild(quantity)
@@ -110,28 +113,29 @@ function addToCart (itemId) {
         removeBtn.innerHTML = "X"
     }
 
-    priceCalculator()
+    priceCalculator() //Calculate the price with priceCalculator after adding a new item to the cart. 
 }
 
 
 
-function removeFromCart (Id) {  
+function removeFromCart (Id) {
+    // This function removes the item which the item id entered as the parameter.
+
     
-    let indexOfItem = quantityOfIds.indexOf(Id)
+    let indexOfItem = quantityOfIds.indexOf(Id) // Finding the index of item id with indexOf function to use the splice method of the arrays that takes two parameters which are index and the deleteCount. The reason why I'm using the splice method in this function is to decrease the quantity.
     
 
 
-    if ((quantityFinder(Id).length) == 1) {
+    if ((quantityFinder(Id).length) == 1) { //If the quantity of the item is 1 when it's in the cart remove the whole line of this product in the table. 
         const elem = document.getElementById(`${Id}`).parentElement
         elem.remove()
-        cart.splice(indexOfItem, 1)
-        quantityOfIds.splice(indexOfItem, 1)
-        console.log("ananke")
+        cart.splice(indexOfItem, 1) //The reason why I'm using the splice method in here is to remove it from the cart array.
+        quantityOfIds.splice(indexOfItem, 1) //The reason why I'm using the splice method in here is to decrease the quantity.
     }
 
 
 
-    if ((quantityFinder(Id).length) > 1) {
+    if ((quantityFinder(Id).length) > 1) { //If the quantity of the items are more than 1, just decrease the quantity.
         cart.splice(indexOfItem, 1)
         quantityOfIds.splice(indexOfItem, 1)
         document.getElementById(`${Id}`).innerHTML = quantityFinder(Id).length
@@ -139,15 +143,20 @@ function removeFromCart (Id) {
 
 
 
-    priceCalculator()
+    priceCalculator() //Calculate the price with priceCalculator after removing an item. 
 }
 
+// 
+let paymentLoc = document.querySelector(".paymentSection")
+let totalPrice = document.createElement("span")
+let endButton = document.createElement("button")
 
 
 function priceCalculator() {
+    // This function calculates the total price of the all items in the cart.
 
 
-    paymentLoc.appendChild(totalPrice)
+    paymentLoc.appendChild(totalPrice) 
 
 
     let total = cart.reduce((acc, product) => acc + product.unitPrice, 0)
@@ -164,11 +173,3 @@ function priceCalculator() {
 
 
 }
-
-
-
-let paymentLoc = document.querySelector(".paymentSection")
-        
-let totalPrice = document.createElement("span")
-
-let endButton = document.createElement("button")
