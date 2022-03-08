@@ -159,16 +159,15 @@ function priceCalculator() {
     paymentLoc.appendChild(totalPrice) 
 
 
-    let total = cart.reduce((acc, product) => acc + product.unitPrice, 0)
+    let total = cart.reduce((acc, product) => acc + product.unitPrice, 0) //Addition with reduce function.
 
 
-    totalPrice.classList.add("price")
-    totalPrice.innerHTML = `TRY ${total.toFixed(2)}`
+    totalPrice.classList.add("price") //for style.
+    totalPrice.innerHTML = `TRY ${total.toFixed(2)}` //Printing the total price to innerHTML in a span which have the ".paymentSection" parent.
 
 
-    paymentLoc.appendChild(endButton)
-    endButton.classList.add("button")
-    endButton.getAttribute("onclick", "checkout()")
+    paymentLoc.appendChild(endButton) //The checkout button.
+    endButton.classList.add("button") //for style.
+    endButton.getAttribute("onclick", "checkout()") //Adding the function "checkout" which is empty to the button.
     endButton.innerHTML = "Proceed to checkout"
-
 }
