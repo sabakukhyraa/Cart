@@ -76,7 +76,7 @@ function infoPrinter (elem) {
 function addToCart (itemId) {
     //This function gets a parameter which is the id of the product.
 
-    //Selecting the correct product with the help of "Id" key and filter method. example for Id key = {-->id: 3<--, productName: "Heinz - Conserve Beans"...) 
+    //Selecting the correct product with the help of "Id" key and filter method. example for Id key = (-->id: 3<--, productName: "Heinz - Conserve Beans"...) 
     let item = products.filter(obj => (obj.id == itemId))
 
     // Adding the object and product ID to the arrays.
@@ -146,7 +146,7 @@ function removeFromCart (Id) {
     priceCalculator() //Calculate the price with priceCalculator after removing an item. 
 }
 
-// 
+// Creating the tags of payment section.
 let paymentLoc = document.querySelector(".paymentSection")
 let totalPrice = document.createElement("span")
 let endButton = document.createElement("button")
@@ -170,6 +170,5 @@ function priceCalculator() {
     endButton.classList.add("button")
     endButton.getAttribute("onclick", "checkout()")
     endButton.innerHTML = "Proceed to checkout"
-
 
 }
