@@ -146,10 +146,6 @@ function removeFromCart (Id) {
     priceCalculator() //Calculate the price with priceCalculator after removing an item. 
 }
 
-// Creating the tags of payment section.
-let paymentLoc = document.querySelector(".paymentSection")
-let totalPrice = document.createElement("span")
-let endButton = document.createElement("button")
 
 
 function priceCalculator() {
@@ -171,3 +167,8 @@ function priceCalculator() {
     endButton.getAttribute("onclick", "checkout()") //Adding the function "checkout" which is empty to the button.
     endButton.innerHTML = "Proceed to checkout"
 }
+
+// Creating the tags of payment section.
+let paymentLoc = document.querySelector(".paymentSection")
+let totalPrice = document.createElement("span")
+let endButton = document.createElement("button")
